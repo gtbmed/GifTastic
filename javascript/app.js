@@ -10,7 +10,7 @@ var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage"
       var person = $(this).attr("data-name");
 
       // Constructing a URL to search Giphy for the name of the person who said the quote
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         person + "&api_key=dc6zaTOxFJmzC&limit=10";
 
       // Performing our AJAX GET request
