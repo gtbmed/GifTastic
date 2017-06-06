@@ -1,0 +1,55 @@
+body {
+	/*background-color: #000733;*/
+	background-image: url(../images/brain.jpg);
+	background-size: cover;
+}
+
+.page-header {
+	background-color: rgba(71, 224, 255, 0.8);
+	border: 0.5px solid white;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.page-header h1 {
+	font-family: 'Bungee Shade';
+	color: white;
+	padding-left: 5px;
+	font-size: 50px;
+}
+
+#feelingButtons button {
+	display: inline-block;
+	margin: 5px;
+}
+
+.item p {
+	color: white;
+	font-family: 'Cormorant SC', serif;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.item {
+	display: inline-block;
+	text-align: center;
+	padding: 5px;
+	margin: 0 2px 2px 2px;
+	border: 2px solid white;
+	border-radius: 5px;
+	background-color: rgba(71, 224, 255, 0.8);
+}
+
+label[for=symptoms]
+{
+	font-family: 'Cormorant SC', serif;
+	font-weight: bold;
+	font-size: 20px;
+	color: #000733;
+	background-color: rgba(71, 224, 255, 0.75);
+	padding: 0 5px 0 5px;
+	border: 0.5px solid white;
+	border-radius: 5px;
+}
+/*font-family: 'Bungee Shade', cursive;
+font-family: 'Cormorant SC', serif;*/

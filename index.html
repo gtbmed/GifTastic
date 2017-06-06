@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Glass Cage of Emotion</title>
 	<!-- Bootstrap CDN -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -12,31 +13,37 @@
    <!-- Javascript page -->
     <script type="text/javascript" src="javascript/app.js"></script>
     <!-- CSS Sheet -->
-    <style type="text/css" src="css/style.css"></style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Cormorant+SC" rel="stylesheet">
 </head>
 <body>
+   <div class="container">
+     	<div class="row page-header">
+       	<h1>I'm in a Glass Cage of Emotion!</h1>
+   		</div>
+       <!-- Rendered buttons will get dumped Here  -->
+       <div class="row">
+         <div class="col-md-6 col-sm-6 col-xs-12">
+       	 <div id="feelingButtons"></div>
+         </div>
+         <div class="col-md-6 col-sm-6 col-xs-12 questions">
+            <form id="patientInfo">
+               <label for="symptoms">Tell me what you feel</label>
+               <input type="text" id="symptoms"><br>
 
-  <div class="container">
-  	<div class="row">
-    	<h1>I'm in a Glass Cage of Emotion</h1>
-		</div>
-    <!-- Rendered buttons will get dumped Here  -->
-    <div class="row">
-    	<div id="feelingButtons"></div>
-    </div>
-		<br>
-		<div class="row">
-    <form id="patientInfo">
-      <label for="symptoms">Tell me how you feel</label>
-      <input type="text" id="symptoms"><br>
-
-      <!-- Button triggers new movie to be added -->
-      <input id="addFeelings" type="submit" value="Add to my issues">
-    </form>
-		</div>
-
-    <!-- All of your inner thoughts will appear hear -->
-    <div id="showMeHowYouFeel"></div>
+               <!-- Button triggers new movie to be added -->
+               <input id="addFeelings" type="submit" value="Add to my issues">
+            </form>
+            <br>
+   		</div>
+      </div>
+   </div>
+   <div class="container brain">
+      <div class="row">
+         <!-- All of your inner thoughts will appear hear -->
+         <div id="showMeHowYouFeel"></div>
+      </div>
 	</div>
 </body>
 </html>

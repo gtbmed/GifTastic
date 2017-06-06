@@ -82,7 +82,7 @@ var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage"
           }
         };
 
-    // Function for displaying movie data
+    // Function for displaying emotion data
     function renderButtons() {
 
       // Deleting the movies prior to adding new movies
@@ -92,10 +92,10 @@ var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage"
       // Looping through the array of movies
       for (var i = 0; i < peopleFeelings.length; i++) {
 
-        // Then dynamicaly generating buttons for each movie in the array
+        // Then dynamicaly generating buttons for each emotion in the array
         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
         var a = $("<button>");
-        // Adding a class of movie to our button
+        // Adding a class of emotion to our button
         a.addClass("emotion");
         // Adding a data-attribute
         a.attr("data-name", peopleFeelings[i]);
@@ -119,7 +119,7 @@ var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage"
       renderButtons();
     });
 
-    // Adding a click event listener to all elements with a class of "movie"
+    // Adding a click event listener to all elements with a class of "emotion" and "gif"
     $(document).on("click", ".emotion", displayGifEmotions);
     $(document).on("click", ".gif", startStopGif);
 
