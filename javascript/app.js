@@ -7,11 +7,11 @@ var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage"
    function displayGifEmotions() {
       $("#showMeHowYouFeel").empty(); // Empty out previous gifs so they don't stack up
       // In this case, the "this" keyword refers to the button that was clicked
-      var person = $(this).attr("data-name");
+      var stressor = $(this).attr("data-name");
 
-      // Constructing a URL to search Giphy for the name of the person who said the quote
+      // Constructing a URL to search Giphy for the name of the stressor who said the quote
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        person + "&api_key=dc6zaTOxFJmzC&limit=10";
+        stressor + "&api_key=dc6zaTOxFJmzC&limit=10";
 
       // Performing our AJAX GET request
       $.ajax({
