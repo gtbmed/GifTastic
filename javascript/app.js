@@ -1,15 +1,14 @@
 $(document).ready(function() {
+// Starting emotions that show on load      
 var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage", "Excitement"];
 
-      // displayGifEmotions function re-renders the HTML to display the appropriate content
-    // Event listener for all button elements
-    // $("button").on("click", 
+    // displayGifEmotions function re-renders the HTML to display the appropriate content 
    function displayGifEmotions() {
       $("#showMeHowYouFeel").empty(); // Empty out previous gifs so they don't stack up
       // In this case, the "this" keyword refers to the button that was clicked
       var stressor = $(this).attr("data-name");
 
-      // Constructing a URL to search Giphy for the name of the stressor who said the quote
+      // Constructing a URL to search Giphy for the name of the stressor
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         stressor + "&api_key=dc6zaTOxFJmzC&limit=10";
 
@@ -26,36 +25,36 @@ var peopleFeelings = ["Frustration", "Confusion", "Sadness", "Happiness", "Rage"
           // Looping over every result item
           for (var i = 0; i < results.length; i++) {
 
-            // Only taking action if the photo has an appropriate rating
+            // and only take action if the photo has an appropriate rating (in this case not "R" or "PG-13")
             if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-              // Creating a div with the class "item"
+              // Create a div with the class "item"
               var gifDiv = $("<div class='item'>");
 
-              // Storing the result item's rating
+              // Store the result item's rating
               var rating = results[i].rating;
 
-              // Creating a paragraph tag with the result item's rating
+              // Create a paragraph tag with the result item's rating
               var p = $("<p>").text("Rating: " + rating);
 
-              // Creating an image tag
+              // Create an image tag
               var feelingImage = $("<img>");
 
-              // Giving the image tag an src attribute of a proprty pulled off the
+              // Give the image tag the attributes for the gif from the API
               // result item for the "still" gif
-              feelingImage.attr("src", results[i].images.fixed_height_still.url);
+              feelingImage.attr("src", results[i].images.fixed_height_still.url); //url for the "still" gif for the initial load
               feelingImage.attr("data-still", results[i].images.fixed_height_still.url); //"still" gif url
               feelingImage.attr("data-animate", results[i].images.fixed_height.url); //"animated" gif url
               feelingImage.attr("data-state", "still"); //status of gif motion
               feelingImage.attr("class", "gif");
 
-              // Is there a way to "thin" my code for with .attr?
+              // Is there a way to "thin" my code for with .attr?   feel 
               /*feelingImage.attr({src: results[i].images.fixed_height_still.url,
                 data-still: results[i].images.fixed_height_still.url, 
                 data-animate: results[i].images.fixed_height.url, 
                 data-state: "still"
               })*/
 
-              // Appending the paragraph and feelingImage we created to the "gifDiv" div we created
+              // Append the paragraph and feelingImage we created to the "gifDiv" div we created
               gifDiv.append(p);
               gifDiv.append(feelingImage);
 
